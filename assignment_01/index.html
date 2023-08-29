@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <title>My Cats</title>
+        <style>
+            body{
+                background-color: rgb(194, 198, 238);
+            }
+            #content{
+                text-align: center;
+            }
+
+            .thumbnail-container{
+                float: left;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .thumbnail{
+                width: 200px;
+                height: 400px;
+                float: left;
+   
+                overflow: hidden;
+                margin: 50px 20px;
+            }
+
+            .thumbnail img {
+                width: 100%; 
+                height: auto;
+            }
+
+            img{
+                overflow-clip-margin: content-box;
+                overflow: clip;
+            }
+
+            #main-image-container img{
+                width: 250px;
+                height: 400px;
+            }
+
+            #main-image-container{
+                margin-left: 475px;
+            }
+
+            #all{
+                width: 1200px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "all">
+        <div id = content>
+        <h1>My Cats</h1>
+        </div>
+        <div class = "thumbnail-container">
+            <div class = "thumbnail">
+                <div id = "thumbnail1">
+                <img src="img1.jpg" alt = "My cat Yuumi">
+            </div>
+            </div>
+            <div class = "thumbnail">
+                <div id = "thumbnail2">
+                <img src="img2.jpg" alt = "My cat Yuumi">
+            </div> 
+            </div>
+            <div class = "thumbnail">
+                <div id = "thumbnail3">
+                <img src="img3.jpg" alt = "My cat Yuumi">
+            </div>
+            </div>
+            <div class = "thumbnail">
+                <div id = "thumbnail4">
+                <img src="img4.jpg" alt = "My cat Huahua">
+            </div>
+            </div>
+            <div class = "thumbnail">
+                <div id = "thumbnail5">
+                <img src="img5.jpg" alt = "My cat Huahua">
+            </div>
+            </div>
+        </div>
+        <div id = "main-image-container">
+            <img id = main src="img5.jpg" alt = "My cat Huahua">
+        </div>
+        </div>
+    </body>
+    <script>
+        document.querySelector('#thumbnail1').onclick = function(){
+            console.log("Clicked!")
+            document.querySelector('#main').src = "img1.jpg";
+            document.querySelector('#main').alt = "My cat Yuumi";
+        }
+
+        document.querySelector('#thumbnail2').onclick = function(){
+            console.log("Clicked!")
+            document.querySelector('#main').src = "img2.jpg";
+            document.querySelector('#main').alt = "My cat Yuumi";
+        }
+
+        document.querySelector('#thumbnail3').onclick = function(){
+            console.log("Clicked!")
+            document.querySelector('#main').src = "img3.jpg";
+            document.querySelector('#main').alt = "My cat Yuumi";
+        }
+
+        document.querySelector('#thumbnail4').onclick = function(){
+            console.log("Clicked!")
+            document.querySelector('#main').src = "img4.jpg";
+            document.querySelector('#main').alt = "My cat Huahua";
+        }
+
+        document.querySelector('#thumbnail5').onclick = function(){
+            console.log("Clicked!")
+            document.querySelector('#main').src = "img5.jpg";
+            document.querySelector('#main').alt = "My cat Huahua";
+        }
+
+
+    </script>
+    </html>
