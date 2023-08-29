@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>
+    Yinghui Zhang | Student Page
+    </title>
+    <style>
+
+        h1{
+            text-align: center;     
+        }
+        #information{
+            float: left;
+            width: 1000px;
+            text-align: center;
+        }
+        #category{
+            float: left;
+            width: 1000px;
+            text-align: center;
+        }
+        #row2{
+            float: left;
+            width: 400px;
+        }
+        #row1{
+            float:left;
+            width: 400px;
+        }
+        #button-color{
+            width: 200px;
+            float: left;
+            background-color:rgb(64, 93, 67);
+        }
+    </style>
+
+</head>
+<body>
+
+<h1>Yinghui Zhang | yinghuiz@usc.edu</h1>
+
+
+<div id = 'category'>
+<div id = "row1">
+<h3>Labs</h3>
+<ul>
+    <li><a href= index.html>Lab 1: Student Page</a></li>
+</ul>
+</div>
+<div id = "row2">
+<h3>Assignments</h3>
+</div>
+</div>
+<div id = 'information'>
+    <div id = button-color>
+        <h3>Favorite Color</h3>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script>
+document.querySelector('#button-color').onclick = function(){
+    document.querySelector('body').style.backgroundColor = 'rgb(64, 93, 67)';
+}
+</script>
