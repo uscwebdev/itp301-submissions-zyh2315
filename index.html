@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <head>
     <title>
     Yinghui Zhang | Student Page
@@ -6,11 +6,10 @@
     <style>
 
         h1{
-            text-align: center;     
+            text-align: center;  
+            margin: 0 auto; 
         }
-        #information{
-            float: left;
-            width: 1000px;
+        h2{
             text-align: center;
         }
         #category{
@@ -20,47 +19,56 @@
         }
         #row2{
             float: left;
-            width: 400px;
+            width: 500px;
         }
         #row1{
             float:left;
-            width: 400px;
+            width: 500px;
         }
         #button-color{
             width: 200px;
             float: left;
+            margin: 0 auto;
+            text-align: center;
             background-color:rgb(64, 93, 67);
+        }
+        #content{
+            width: 1000px;
+            margin: 0 auto;
         }
     </style>
 
 </head>
 <body>
 
-<h1>Yinghui Zhang | yinghuiz@usc.edu</h1>
+<h1>Yinghui Zhang</h1>
+<h2>yinghuiz@usc.edu</h2>
 
-
+<div id = 'content'>
+     <div id = button-color>
+        <h3>Favorite Color</h3>
+     </div>
 <div id = 'category'>
 <div id = "row1">
 <h3>Labs</h3>
 <ul>
-    <li><a href= index.html>Lab 1: Student Page</a></li>
+    <li><a href= "index.html">Lab 1: Student Page</a></li>
+    <li><a href="lab_02/lab_02.html">Lab 2: Currency Converter</a></li>
 </ul>
 </div>
 <div id = "row2">
 <h3>Assignments</h3>
+<ul>
+    <li><a href = "assignment_01/index.html">Assignments 1: JS Photo Gallery</a></li>
+</ul>
 </div>
 </div>
-<div id = 'information'>
-    <div id = button-color>
-        <h3>Favorite Color</h3>
-    </div>
 </div>
-
+<script>
+    document.querySelector('#button-color').onclick = function(){
+        document.querySelector('body').style.backgroundColor = 'rgb(64, 93, 67)';
+    }
+</script>
 
 </body>
 </html>
-<script>
-document.querySelector('#button-color').onclick = function(){
-    document.querySelector('body').style.backgroundColor = 'rgb(64, 93, 67)';
-}
-</script>
