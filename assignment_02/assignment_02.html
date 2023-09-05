@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<head>
+<title>Flower Online Market</title>
+<style>
+    img{
+        width: 250px;
+        height: 175px;
+        margin-left: 20px;
+    }
+
+    body{
+        width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    #content{
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+    .flower{
+        width: 300px;
+        float: left;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    #cart{
+        clear: both;
+        float: right;
+        background-color: antiquewhite;
+        width: 1000px;
+        text-align: center;
+    }
+    </style>
+<body>
+    <h1>Flower Online Market</h1>
+    
+    <div id = "content">
+
+    <div class = "flower">
+    <img id = "rose" src="img3.jpg" alt="Picture of white rose">
+    <h2>White Rose</h2>
+    <h3>$10</h3>
+    </div>
+
+    <div class = "flower">
+    <img id = "macrophylla" src="img2.jpg" alt="Picture of hydrangea macrophylla">
+    <h2>Hydrangea Macrophylla</h2>
+    <h3>$20</h3>
+    </div>
+
+    <div class = "flower">
+    <img id="lily" src="img1.jpg" alt="Picture of lily of the valley">
+    <h2>Lily of the Valley</h2>
+    <h3>$50</h3>
+    </div>
+
+    <div id = "cart">
+    <h4>Your Cart</h4>
+    <h4>Subtotal: $ <span id = total>0</span></h4>
+    </div>
+
+</div>
+
+    <script>
+        /* 1.set initial value is 0 */
+        /* 2.choose and click product */
+        /* 3.create a variable that represent the price of one kind of flower */
+        /* 4.get the value of subtotal and make sure the value is an int*/
+        /* 5.make sure everytime we clicked the product its price will be add to the subtotal */
+
+        
+        /* 1.set initial value is 0 */
+        var total = 0;
+        /* 2.choose and click product */
+        document.querySelector("#rose").onclick = function(){
+           console.log("Clicked");
+           /* 3.create a variable that represent the price of rose */
+           var price = 10;
+           /* 4.get the value of subtotal and make sure the value is an int*/
+           var totalElement = document.getElementById("total");
+           var totalValue = parseInt(totalElement.textContent);
+            /* 5.make sure everytime we clicked the product its price will be add to the subtotal */
+           totalValue += price;
+           totalElement.textContent = totalValue;
+        }
+
+        document.querySelector("#macrophylla").onclick = function(){
+           console.log("Clicked");
+           var price = 20;
+           var totalElement = document.getElementById("total");
+           var totalValue = parseInt(totalElement.textContent);
+
+           totalValue += price;
+           totalElement.textContent = totalValue;
+        }
+
+        document.querySelector("#lily").onclick = function(){
+           console.log("Clicked");
+           var price = 50;
+           var totalElement = document.getElementById("total");
+           var totalValue = parseInt(totalElement.textContent);
+
+           totalValue += price;
+           totalElement.textContent = totalValue;
+        }
+    </script>
+</body>
+</html>
