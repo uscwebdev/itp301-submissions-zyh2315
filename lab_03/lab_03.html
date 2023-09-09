@@ -79,7 +79,7 @@
         /* 4.get the value of subtotal and make sure the value is an int*/
         /* 5.make sure everytime we clicked the product its price will be add to the subtotal */
 
-        
+        var fund_remain = 0;
         /* 1.set initial value is 0 */
         var total = 0;
         /* 2.choose and click product */
@@ -88,31 +88,45 @@
            /* 3.create a variable that represent the price of rose */
            var price = 10;
            /* 4.get the value of subtotal and make sure the value is an int*/
-           var totalElement = document.getElementById("total");
-           var totalValue = parseInt(totalElement.textContent);
+           //var totalElement = document.getElementById("total");
+           //var totalValue = parseInt(totalElement.textContent);
+           if(price <= fund_remain){
             /* 5.make sure everytime we clicked the product its price will be add to the subtotal */
-           totalValue += price;
-           totalElement.textContent = totalValue;
+                //totalValue += price;
+                total += price;
+                fund_remain -= price;
+                document.querySelector("#total").textContent = total;
+                document.querySelector("#fund_remain").textContent = fund_remain;
+           }else{
+            alert("Insufficient funds");
+           }
+
         }
 
         document.querySelector("#macrophylla").onclick = function(){
            console.log("Clicked");
            var price = 20;
-           var totalElement = document.getElementById("total");
-           var totalValue = parseInt(totalElement.textContent);
-
-           totalValue += price;
-           totalElement.textContent = totalValue;
+           if(price <= fund_remain){
+                total += price;
+                fund_remain -= price;
+                document.querySelector("#total").textContent = total;
+                document.querySelector("#fund_remain").textContent = fund_remain;
+            }else{
+                alert("Insufficient funds");
+            }
         }
 
         document.querySelector("#lily").onclick = function(){
            console.log("Clicked");
            var price = 50;
-           var totalElement = document.getElementById("total");
-           var totalValue = parseInt(totalElement.textContent);
-
-           totalValue += price;
-           totalElement.textContent = totalValue;
+           if(price <= fund_remain){
+                total += price;
+                fund_remain -= price;
+                document.querySelector("#total").textContent = total;
+                document.querySelector("#fund_remain").textContent = fund_remain;
+            }else{
+                alert("Insufficient funds");
+            }
         }
 
         var num1;
@@ -122,10 +136,12 @@
 
             num1 = document.querySelector("#fund_input").value;
             num1 = parseInt(num1);
+            if(!isNaN(num1)){
+                fund_remain += num1;
 
-            document.querySelector("#fund_input").value = '';
-            document.querySelector("#fund_remain").innerHTML = num1;
-
+                document.querySelector("#fund_input").value = '';
+                document.querySelector("#fund_remain").innerHTML = num1;
+            }
 
         }
     </script>
