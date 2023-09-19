@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+    <title>Liar's Dice Game</title>
+    <style>
+    body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        }
+
+    #dice-container {
+        margin: 20px auto;
+        }
+
+    #dice-container img {
+        width: 80px;
+        margin: 10px;
+    }
+
+    #message {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <h1>Liar's Dice Game</h1>
+    <div id="dice-container">
+        <img src="dice_images/1.png" alt="Number 1">
+        <img src="dice_images/2.png" alt="Number 2">
+        <img src="dice_images/3.png" alt="Number 3">
+        <img src="dice_images/4.png" alt="Number 4">
+        <img src="dice_images/5.png" alt="Number 5">
+        <img src="dice_images/6.png" alt="Number 6">
+    </div>
+    <label for="guess">Enter your guess (1-6):</label>
+    <input type="number" id="guess" min="1" max="6">
+    <button id="submit">Submit</button>
+    <div id="message"></div>
+<script>
+        // Function to generate a random integer between min and max (inclusive)
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Function to roll the dice and check the user's guess
+function playGame(guess) {
+    const numbers = [];
+    const images = document.querySelectorAll('#dice-container img');
+    let correctGuess = false;
+
+    // Roll five dice and update the images
+    for (let i = 0; i < 5; i++) {
+        const randomNumber = getRandomInt(1, 6);
+        numbers.push(randomNumber);
+        images[i].src = `dice_images/${randomNumber}.png`;
+        images[i].alt = `Dice ${randomNumber}`;
+    }
+
+    // Check if the user's guess matches any of the rolled dice
+    if (numbers.includes(guess)) {
+        correctGuess = true;
+    }
+
+    // Display a message based on the user's guess
+    const messageElement = document.getElementById('message');
+    messageElement.textContent = correctGuess
+        ? 'Congratulations! You guessed at least one value correctly.'
+        : 'Sorry, your guess did not match any of the rolled dice.';
+    messageElement.style.color = correctGuess ? 'green' : 'red';
+}
+
+// Event listener for the Submit button
+document.getElementById('submit').addEventListener('click', function () {
+    const guess = parseInt(document.getElementById('guess').value);
+
+    if (isNaN(guess) || guess < 1 || guess > 6) {
+        alert('Please enter a valid integer between 1 and 6.');
+    } else {
+        playGame(guess);
+    }
+});
+
+</script>
+</body>
+</html>
